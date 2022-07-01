@@ -1,6 +1,7 @@
 import React, {useState, useRef} from "react"
 import styled from "styled-components"
 import { createGlobalStyle } from "styled-components"
+import CarouselComponent from "./Components/Carousel/index"
 import ProductCard from "./Components/ProductCard"
 const GlobalStyle = createGlobalStyle`
   *{
@@ -11,14 +12,13 @@ const GlobalStyle = createGlobalStyle`
 `;
 const Main = styled.main`
   display: flex;
+  background: blueviolet;
+  justify-content: center;
 `
 export default function App (){
   return(
     <Main>
       <GlobalStyle />
-      {ProductCard()}
-      {ProductCard()}
-      {ProductCard()}
       {ProductCard()}
     </Main>
   )

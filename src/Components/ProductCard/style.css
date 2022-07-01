@@ -6,7 +6,7 @@
     -webkit-animation: fadeIn .8s ease-in-out;
     -moz-animation: fadeIn .8s ease-in-out;
     -o-animation: fadeIn .8s ease-in-out;
-    animation: fadeIn .8s ease-in-out;
+    animation: fadeIn .9s ease-in-out;
     }
 @-webkit-keyframes fadeIn {
     0% { opacity: 0; }
