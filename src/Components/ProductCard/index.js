@@ -1,5 +1,5 @@
 import React, {useState, useRef} from "react"
-import {FaHeart, FaShoppingCart} from "react-icons/fa"
+import {FaHeart, FaShoppingCart, FaArrowRight, FaArrowLeft} from "react-icons/fa"
 import styled from "styled-components"
 import CamisaBranca from "../Assets/camisabranca.png"
 import "./style.css"
@@ -18,6 +18,10 @@ const ImgBox = styled.div`
     display: flex;
     justify-content: center;
     background: #f0f0f0;
+    button{
+        background: none;
+        border: none;
+    }
 `;
 const ImgProduct = styled.img`
     width: 13vw;
@@ -58,14 +62,18 @@ const Price = styled.h4`
 `
 export default function ProductCard (){
     const [fav,setFav] =useState(false)
+    const [shirt, setShirt] = useState(CamisaPreta)
     const textcolor = useRef()
-    function setColorFavButton (){
-        setFav(!fav)
-    }
   return(
     <Card className="fadeIn">  
         <ImgBox>
-            <ImgProduct src={CamisaPreta} alt="Camisa branca" />
+            <button onClick={()=>{
+                setShirt(shirt === CamisaPreta ? CamisaBranca : CamisaPreta)
+            }}> <FaArrowLeft/></button>
+            <ImgProduct src={shirt} alt="Camisa branca" />
+            <button onClick={()=>{
+                setShirt(shirt === CamisaBranca ? CamisaPreta : CamisaBranca)
+            }}> <FaArrowRight/> </button>
         </ImgBox>
         <DescriptionProduct>
             <h3 ref={textcolor}>
@@ -82,7 +90,7 @@ export default function ProductCard (){
             <div>
                 <FaHeart 
                     onClick={()=>{
-                    setColorFavButton()}} 
+                        setFav(!fav)}} 
                     style={fav === false ? { color: "#cecece",transition:"all ease .6s"} : {color: "rgba(255, 0, 0, 0.877)", transition:"all ease .6s"} } 
                     className="Icons"/>
                 <FaShoppingCart className="Icons"/>
