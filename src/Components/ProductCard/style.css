@@ -1,7 +1,26 @@
-.FavIcon{
-    margin: 10px;
-    color: rgba(255, 0, 0, 0.877);
+.Icons{
+    width: 2.2vw;
+    height: 2.5vh;
 }
-.BuyIcon{
-    padding: 10px;
+.fadeIn {
+    -webkit-animation: fadeIn .8s ease-in-out;
+    -moz-animation: fadeIn .8s ease-in-out;
+    -o-animation: fadeIn .8s ease-in-out;
+    animation: fadeIn .8s ease-in-out;
+    }
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; } 
+    }
+@-moz-keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }

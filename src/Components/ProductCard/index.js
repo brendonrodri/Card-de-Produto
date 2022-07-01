@@ -57,13 +57,18 @@ const Price = styled.h4`
     font-size: .9em;
 `
 export default function ProductCard (){
+    const [fav,setFav] =useState(false)
+    const textcolor = useRef()
+    function setColorFavButton (){
+        setFav(!fav)
+    }
   return(
-    <Card>  
+    <Card className="fadeIn">  
         <ImgBox>
             <ImgProduct src={CamisaPreta} alt="Camisa branca" />
         </ImgBox>
         <DescriptionProduct>
-            <h3>
+            <h3 ref={textcolor}>
                 CAMISA PRETA SEM ESTAMPA
             </h3>
             <p>
@@ -75,8 +80,12 @@ export default function ProductCard (){
                 <Price>R$20,00</Price>
             </div>
             <div>
-                <FaHeart className="FavIcon"/>
-                <FaShoppingCart className="BuyIcons"/>
+                <FaHeart 
+                    onClick={()=>{
+                    setColorFavButton()}} 
+                    style={fav === false ? { color: "#cecece",transition:"all ease .6s"} : {color: "rgba(255, 0, 0, 0.877)", transition:"all ease .6s"} } 
+                    className="Icons"/>
+                <FaShoppingCart className="Icons"/>
             </div>
         </PurchaseSection>
     </Card>
